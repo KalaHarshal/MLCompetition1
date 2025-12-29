@@ -1,173 +1,158 @@
-Financial Health Prediction Challenge – Zindi
-📌 Overview
+# 📊 Financial Health Prediction Challenge (Zindi)
 
-This repository contains my solution for the data.org Financial Health Prediction Challenge hosted on Zindi.
-The objective of the competition is to predict the Financial Health Index (FHI) of small and medium-sized enterprises (SMEs) across Southern Africa.
+## Overview
+This repository contains my complete machine learning solution for the **data.org Financial Health Prediction Challenge**, hosted on **Zindi**.  
+The challenge focuses on predicting the **Financial Health Index (FHI)** of Small and Medium-Sized Enterprises (SMEs) using socio-economic and business survey data from Southern Africa.
 
-The Financial Health Index categorizes businesses into:
+The **Financial Health Index (FHI)** is a composite indicator that classifies SMEs into:
+- **Low**
+- **Medium**
+- **High**
 
-Low
+financial health categories, capturing resilience, savings behavior, debt exposure, and access to financial services.
 
-Medium
+---
 
-High
+## 🏆 Competition Information
 
-based on a holistic assessment of:
+| Item | Details |
+|-----|--------|
+| Platform | Zindi |
+| Challenge | data.org Financial Health Prediction Challenge |
+| Countries | Eswatini, Lesotho, Malawi, Zimbabwe |
+| Evaluation Metric | **F1 Score** |
+| Prize Pool | $1,500 USD |
+| Problem Type | Multi-class Classification |
+| Status | Ongoing |
 
-Savings and assets
+---
 
-Debt and repayment capacity
+## 🎯 Problem Statement
+Traditional financial metrics such as profit or revenue do not fully capture the financial well-being of SMEs.  
+This challenge introduces a holistic **Financial Health Index (FHI)** that evaluates SME stability across multiple dimensions.
 
-Resilience to shocks
+The goal is to **build a machine learning model** that accurately predicts the FHI category of an SME using structured tabular data.
 
-Access to credit and financial services
+---
 
-This solution uses machine learning techniques to model SME financial well-being using socio-economic and business-level survey data.
+## 📈 Model Performance
 
-🏆 Competition Details
+- **Public Leaderboard F1 Score:** **0.895**
 
-Platform: Zindi
+The model was trained and evaluated using best practices to avoid data leakage and ensure reproducibility.
 
-Challenge: data.org Financial Health Prediction Challenge
+---
 
-Countries Covered: Eswatini, Lesotho, Malawi, Zimbabwe
+## 🧠 Solution Approach
 
-Evaluation Metric: F1 Score
+### 1️⃣ Data Preprocessing
+- Handled missing values appropriately
+- Encoded categorical variables
+- Normalized / scaled numerical features where necessary
+- Applied stratified train-validation split
 
-Prize Pool: $1,500 USD
+### 2️⃣ Feature Engineering
+- Created derived indicators from financial variables
+- Aggregated country-level and sector-level features
+- Reduced noise from sparse categorical features
 
-Status: Active
+### 3️⃣ Modeling
+- Trained multiple machine learning models suitable for tabular data
+- Tuned hyperparameters using cross-validation
+- Optimized performance using **F1 score**
+- Ensured class balance handling
 
-🎯 Objective
+### 4️⃣ Evaluation
+- Cross-validation F1 score
+- Public leaderboard evaluation
+- Fixed random seeds for reproducibility
 
-Build a multi-class classification model to predict the Financial Health Index (FHI) of SMEs using structured tabular data such as:
+---
+## 📓 Notebook Description
 
-Business size and demographics
+### `Competition.ipynb`
+The notebook contains:
+- Exploratory Data Analysis (EDA)
+- Feature engineering
+- Model training and tuning
+- Evaluation metrics
+- Submission file generation
 
-Trade activity (imports/exports, commodities)
+All steps are documented within the notebook for clarity and reproducibility.
 
-Financial access indicators
+---
 
-Geographic and country-level features
+## ⚙️ Requirements
 
-📊 Model Performance
-
-Validation / Public Leaderboard Score:
-F1 Score ≈ 0.895
-
-This score was achieved without data leakage and using only the datasets provided by the competition, in compliance with Zindi rules.
-
-🧠 Approach
-1. Data Preprocessing
-
-Handling missing values
-
-Encoding categorical variables
-
-Feature scaling (where required)
-
-Train-validation split with stratification
-
-2. Feature Engineering
-
-Derived financial ratios and indicators
-
-Country-level and sector-based aggregation features
-
-Robust handling of categorical variables
-
-3. Modeling
-
-Traditional ML models suited for tabular data
-
-Hyperparameter tuning using cross-validation
-
-Class imbalance handling
-
-Optimization for F1 score
-
-4. Evaluation
-
-Cross-validation F1 score
-
-Public leaderboard validation
-
-Consistent seed usage for reproducibility
-
-
-
-📓 Notebook
-
-The complete end-to-end solution is provided in the Jupyter Notebook:
-
-Competition.ipynb
-
-
-It includes:
-
-Exploratory Data Analysis (EDA)
-
-Feature engineering
-
-Model training
-
-Evaluation
-
-Submission file generation
-
-⚙️ Requirements
-
-All tools and libraries used are open-source, as required by the competition rules.
+This project uses **only open-source libraries**, in compliance with Zindi rules.
 
 Typical dependencies include:
+- Python 3.x
+- NumPy
+- Pandas
+- Scikit-learn
+- Matplotlib / Seaborn
 
-Python 3.x
-
-NumPy
-
-Pandas
-
-Scikit-learn
-
-Matplotlib / Seaborn
-
-(Exact versions can be added to requirements.txt if needed.)
-
+Install dependencies using:
+```bash
+pip install -r requirements.txt
 📤 Submission Format
-
-The final submission follows the required format:
+The final submission file follows the required format:
 
 ID	Target
-ID_XXXXX	Low
-ID_YYYYY	Medium
-ID_ZZZZZ	High
-🔒 Competition Compliance
+ID_XXXXXX	Low
+ID_YYYYYY	Medium
+ID_ZZZZZZ	High
 
-✔ Used only competition-provided data
-✔ No automated ML tools
-✔ No external/private datasets
-✔ Fully reproducible with fixed random seeds
+🔒 Competition Compliance
+✔ Only competition-provided data used
+✔ No automated machine learning tools
+✔ No external or private datasets
+✔ Fully reproducible solution
+✔ Fixed random seeds
 
 🌍 Social Impact
-
-This project contributes to:
+This project supports:
 
 Financial inclusion
 
-Data-driven policymaking
-
 SME resilience assessment
+
+Data-driven policy design
 
 Responsible AI for social good
 
-By predicting SME financial health, the model helps governments, financial institutions, and development partners better target support and financing.
+Accurate prediction of SME financial health helps financial institutions, governments, and development partners allocate resources more effectively.
 
 ✍️ Author
-
 Harshal Kala
-Data Science & Machine Learning Enthusiast
+Machine Learning & Data Science Practitioner
 
 📜 License
+This project adheres to the competition data license:
+Creative Commons Attribution-ShareAlike 4.0 (CC-BY-SA 4.0)
 
-This project follows the competition’s data license:
-CC-BY-SA 4.0
+⭐ Acknowledgements
+data.org
+
+FinMark Trust
+
+Zindi
+
+If you find this repository useful, feel free to ⭐ star it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
